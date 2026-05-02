@@ -8,14 +8,19 @@ function verLista(){
     for(let i = 0; i < listas[index].itens.length; i++){
         const item = document.createElement('p');
         const btnExcluir = document.createElement('button');
+        const btnCheck = document.createElement('button');
 
         item.textContent = listas[index].itens[i].nome;
 
         btnExcluir.textContent = "Excluir";
         btnExcluir.onclick = () => excluirItem(i);
 
+        btnCheck.textContent = "Feito";
+        btnCheck.onclick = () => checkItem(i);
+
         conteiner.appendChild(item);
         conteiner.appendChild(btnExcluir);
+        conteiner.appendChild(btnCheck);
     }
 }
 
@@ -34,6 +39,14 @@ function excluirItem(x){
     listas[index].itens.splice(x, 1);
     localStorage.setItem("listas", JSON.stringify(listas));
     window.location.reload();
+}
+
+function checkItem(x){
+    if(listas[index].itens[x].status == 'pendente'){
+        listas[index].itens[x].status = 'feito';
+    }else{
+        listas[index].itens[x].status = 'pendente'
+    }
 }
 
 verLista();
