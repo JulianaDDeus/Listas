@@ -1,4 +1,4 @@
-function verListas(){
+function mostrarListas(){
     const listas = JSON.parse(localStorage.getItem('listas')) || [];
     const conteiner = document.getElementById('minhasListas');
     if(listas == null || listas.length == 0){
@@ -11,14 +11,26 @@ function verListas(){
     for(let i = 0; i < listas.length; i++){
         const item = document.createElement('div');
         const nome = document.createElement('p');
-        const verLista = document.createElement('button');
-        const excluirLista = document.createElement('button');
-        verLista.textContent = "Ver lista";
-        excluirLista.textContent = "Excluir"
+        const link = document.createElement('a');
+        const btnLista = document.createElement('button');
+        const btnExcluir = document.createElement('button');
+
+        link.href = "./verLista.html";
+        link.appendChild(btnLista);
+
+        btnLista.textContent = "Ver lista";
+        btnLista.onclick = () => { localStorage.setItem("listaSelecionada", i);};
+
+        btnExcluir.textContent = "Excluir"
+        btnExcluir.onclick = () => excluirLista(i);
+
         nome.textContent = listas[i].nome;
+
+
         item.appendChild(nome);
-        item.appendChild(verLista);
-        item.appendChild(excluirLista);
+        item.appendChild(link);
+        item.appendChild(btnExcluir);
+
         conteiner.appendChild(item);
     }
 }
@@ -39,8 +51,11 @@ function addLista(){
     localStorage.setItem("listas", JSON.stringify(listas));
 }
 
-function inputItem(){
-
+function excluirLista(x){
+    const listas = JSON.parse(localStorage.getItem("listas")) || [];
+    listas.splice(x, 1);
+    localStorage.setItem("listas", JSON.stringify(listas));
+    window.location.reload();
 }
 
-verListas();
+mostrarListas();
