@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Lista</title>
+</head>
+<body>
+    <header>
+        <h1>Listas</h1>
+        <ul>
+            <a href="index.html"><li>Home</li></a>
+            <a href="listas.html"><li>Suas listas</li></a>
+            <a><li>Nova lista</li></a>
+        </ul>
+    </header>
+    <main>
+        <h2>Criar Nova Lista</h2>
+        <form id="formNovaLista">
+            <label for="nomeLista">Nome da Lista:</label>
+            <input type="text" id="nomeLista" name="nomeLista" required>
+            <button type="submit" onclick="addLista()">Criar Lista</button>
+        </form>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
