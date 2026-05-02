@@ -7,14 +7,31 @@ function verLista(){
     nome.innerHTML = listas[index].nome;
     for(let i = 0; i < listas[index].itens.length; i++){
         const item = document.createElement('p');
-        item.textContent = listas[index].itens[i];
+        const btnExcluir = document.createElement('button');
+
+        item.textContent = listas[index].itens[i].nome;
+
+        btnExcluir.textContent = "Excluir";
+        btnExcluir.onclick = () => excluirItem(i);
+
         conteiner.appendChild(item);
+        conteiner.appendChild(btnExcluir);
     }
 }
 
 function addItem(){
     const item = document.getElementById('novoItem').value;
-    listas[index].itens.push(item);
+    const obj = {
+        nome: item,
+        status: 'pendente'
+    }
+    listas[index].itens.push(obj);
+    localStorage.setItem("listas", JSON.stringify(listas));
+    window.location.reload();
+}
+
+function excluirItem(x){
+    listas[index].itens.splice(x, 1);
     localStorage.setItem("listas", JSON.stringify(listas));
     window.location.reload();
 }
