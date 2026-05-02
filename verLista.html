@@ -9,13 +9,16 @@
     <header>
         <h1>Listas</h1>
         <ul>
-            <a><li>Home</li></a>
+            <a href="index.html"><li>Home</li></a>
             <a href="listas.html"><li>Suas listas</li></a>
             <a href="addLista.html"><li>Nova lista</li></a>
         </ul>
     </header>
-    <main id="lista">
+    <main>
         <h3 id="nomeDaLista"></h3>
+        <input type="text" id="novoItem">
+        <button onclick="addItem()">+</button>
+        <div id="lista"></div>
     </main>
     <script src="./lista.js"></script>
 </body>
