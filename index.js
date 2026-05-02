@@ -1,5 +1,6 @@
 function addLista(){
     let nome = document.getElementById("nomeLista").value;
+    let items = document.getElementById("inputItem").value;
 
     let obj = {
         nome: nome,
@@ -39,6 +40,15 @@ function mostrarListas(){
             itemLista.appendChild(nomeLista);
         }
     }
+}
+let x = 0;
+function inputItem(){
+    let container = document.getElementById("inputItem");
+    const input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.setAttribute("id", "item" + x);
+    container.appendChild(input);
+    x++;
 }
 
 mostrarListas();
