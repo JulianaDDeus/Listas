@@ -6,6 +6,7 @@ function verLista(){
     const conteiner = document.getElementById('lista')
     nome.innerHTML = listas[index].nome;
     for(let i = 0; i < listas[index].itens.length; i++){
+        const div = document.createElement('div');
         const item = document.createElement('p');
         const btnExcluir = document.createElement('button');
         const btnCheck = document.createElement('button');
@@ -20,9 +21,12 @@ function verLista(){
         btnCheck.className = "btn";
         btnCheck.onclick = () => checkItem(i);
 
-        conteiner.appendChild(item);
-        conteiner.appendChild(btnExcluir);
-        conteiner.appendChild(btnCheck);
+        div.className = "divItem";
+        div.appendChild(item);
+        div.appendChild(btnExcluir);
+        div.appendChild(btnCheck);
+
+        conteiner.appendChild(div);
     }
 }
 
