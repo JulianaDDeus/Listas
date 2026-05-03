@@ -13,9 +13,11 @@ function verLista(){
         item.textContent = listas[index].itens[i].nome;
 
         btnExcluir.textContent = "Excluir";
+        btnExcluir.className = "btn";
         btnExcluir.onclick = () => excluirItem(i);
 
         btnCheck.textContent = "Feito";
+        btnCheck.className = "btn";
         btnCheck.onclick = () => checkItem(i);
 
         conteiner.appendChild(item);
@@ -26,6 +28,10 @@ function verLista(){
 
 function addItem(){
     const item = document.getElementById('novoItem').value;
+    if(item.length == 0){
+        window.alert('Digite algo para adcionar um item');
+        return;
+    }
     const obj = {
         nome: item,
         status: 'pendente'
@@ -45,7 +51,7 @@ function checkItem(x){
     if(listas[index].itens[x].status == 'pendente'){
         listas[index].itens[x].status = 'feito';
     }else{
-        listas[index].itens[x].status = 'pendente'
+        listas[index].itens[x].status = 'pendente';
     }
 }
 

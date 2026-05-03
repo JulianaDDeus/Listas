@@ -1,0 +1,26 @@
+header{
+    margin-bottom: 10px;
+    padding: 10px;
+}
+main{
+    padding: 10px;
+}
+#mainHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#minhasListas{
+    display: flex;
+    flex-wrap: wrap;
+}
+.divLista{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn{
+    margin: 5px;
+}

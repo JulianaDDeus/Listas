@@ -10,7 +10,7 @@ function mostrarListas(){
     }
     for(let i = 0; i < listas.length; i++){
         const item = document.createElement('div');
-        const nome = document.createElement('p');
+        const nome = document.createElement('h3');
         const link = document.createElement('a');
         const btnLista = document.createElement('button');
         const btnExcluir = document.createElement('button');
@@ -19,14 +19,16 @@ function mostrarListas(){
         link.appendChild(btnLista);
 
         btnLista.textContent = "Ver lista";
+        btnLista.className = "btn";
         btnLista.onclick = () => { localStorage.setItem("listaSelecionada", i);};
 
         btnExcluir.textContent = "Excluir"
+        btnExcluir.className = "btn";
         btnExcluir.onclick = () => excluirLista(i);
 
         nome.textContent = listas[i].nome;
 
-
+        item.className = "divLista";
         item.appendChild(nome);
         item.appendChild(link);
         item.appendChild(btnExcluir);
