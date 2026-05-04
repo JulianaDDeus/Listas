@@ -7,24 +7,33 @@ function verLista(){
     nome.innerHTML = listas[index].nome;
     for(let i = 0; i < listas[index].itens.length; i++){
         const div = document.createElement('div');
+        const divItem = document.createElement('div');
+        const divBtn = document.createElement('div');
         const item = document.createElement('p');
         const btnExcluir = document.createElement('button');
         const btnCheck = document.createElement('button');
 
         item.textContent = listas[index].itens[i].nome;
+        item.className = "nomeItem";
 
         btnExcluir.textContent = "Excluir";
-        btnExcluir.className = "btn";
+        btnExcluir.className = "btnLista btn";
         btnExcluir.onclick = () => excluirItem(i);
 
         btnCheck.textContent = "Feito";
         btnCheck.className = "btn";
         btnCheck.onclick = () => checkItem(i);
 
-        div.className = "divItem";
-        div.appendChild(item);
-        div.appendChild(btnExcluir);
-        div.appendChild(btnCheck);
+        divBtn.appendChild(btnExcluir);
+        divBtn.appendChild(btnCheck);
+        divBtn.className = "divBotoes";
+
+        divItem.appendChild(item);
+        divItem.appendChild(divBtn);
+        divItem.className = "divItem";
+
+        div.className = "divisaoLista";
+        div.appendChild(divItem);
 
         conteiner.appendChild(div);
     }

@@ -28,12 +28,21 @@
             </div>
         </nav>
     </header>
-    <main id="formAddLista">
-        <h2 id="h2">Criar Nova Lista</h2>
-        <form id="formNovaLista" class="main">
-            <input type="text" id="nomeLista" name="nomeLista" placeholder="Nome da lista" required>
-            <button type="submit" onclick="addLista()" class="btn">Criar Lista</button>
-        </form>
+    <main id="formAddLista" class="container d-flex justify-content-center">
+        <div class="col-12 col-md-6">
+            <div class="main">
+                <h2 id="h2">Criar Nova Lista</h2>
+
+                <form id="formNovaLista" onsubmit="addLista(); return false;">
+                    <input type="text" id="nomeLista" name="nomeLista" placeholder="Nome da lista" required>
+                    
+                    <button type="submit" class="btn">
+                        Criar Lista
+                    </button>
+                </form>
+            </div>
+
+        </div>
     </main>
     <script src="../JS/index.js"></script>
 </body>

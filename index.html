@@ -12,25 +12,27 @@
 <body>
     <header>
         <h1>Listas</h1>
-        <nav class="navbar navbar-expand-lg">
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./PAGES/listas.html">Suas listas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./PAGES/addLista.html">Nova lista</a>
-                    </li>
-                </ul>
-            </div>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./PAGES/listas.html">Suas listas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./PAGES/addLista.html">Nova lista</a>
+                </li>
+            </ul>
         </nav>
     </header>
-    <main id="mainHome" class="main">
-        <a href="./PAGES/listas.html"><button class="btn">Suas listas</button></a>
-        <a href="./PAGES/addLista.html"><button class="btn">Nova lista</button></a>
+    <main id="mainHome" class="container">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="main col-6">
+                <a href="./PAGES/listas.html" class="btn w-100">Suas listas</a>
+                <a href="./PAGES/addLista.html" class="btn w-100">Nova lista</a>
+            </div>
+        </div>
     </main>
 </body>
 </html>
